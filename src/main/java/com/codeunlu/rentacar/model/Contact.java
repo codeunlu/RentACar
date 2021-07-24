@@ -1,0 +1,30 @@
+package com.codeunlu.rentacar.model;
+
+import com.codeunlu.rentacar.model.enums.ContactType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "contacts")
+public class Contact {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id",nullable = false)
+    private Individual individuals;
+
+    @Column(name = "contact_type_id")
+    private ContactType contactTypeId;
+
+    @Column(name = "content")
+    private String content;
+}
