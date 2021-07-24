@@ -1,57 +1,68 @@
 package com.codeunlu.rentacar.service;
 
-import com.codeunlu.rentacar.core.utilities.results.DataResult;
-import com.codeunlu.rentacar.core.utilities.results.Result;
-import com.codeunlu.rentacar.core.utilities.results.SuccessDataResult;
-import com.codeunlu.rentacar.core.utilities.results.SuccessResult;
 import com.codeunlu.rentacar.dto.CreateIndividualDto;
 import com.codeunlu.rentacar.dto.IndividualDto;
-import com.codeunlu.rentacar.dto.IndividualDtoConverter;
 import com.codeunlu.rentacar.model.Individual;
 import com.codeunlu.rentacar.repository.IndividualRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class IndividualService {
     private final IndividualRepository individualRepository;
-    private final IndividualDtoConverter individualDtoConverter;
+    private final ModelMapper modelMapper;
 
-    public IndividualService(IndividualRepository individualRepository, IndividualDtoConverter individualDtoConverter) {
+    public IndividualService(IndividualRepository individualRepository, ModelMapper modelMapper) {
         this.individualRepository = individualRepository;
-        this.individualDtoConverter = individualDtoConverter;
+        this.modelMapper = modelMapper;
     }
 
-    public Result createIndividual(CreateIndividualDto individualDto) {
-        Individual individual = new Individual();
-
-        individual.setName(individualDto.getName());
-        individual.setSurname(individualDto.getSurname());
-        individual.setDateOfBirth(individualDto.getDateOfBirth());
-        individual.setNationalId(individualDto.getNationalId());
-        individual.setContacts(individualDto.getContacts());
-        individual.setAddresses(individualDto.getAddresses());
-
-        individualRepository.save(individual);
-        return new SuccessResult("Successfully added!");
+    public CreateIndividualDto createIndividual(CreateIndividualDto createIndividualDto){
+        Individual individual = modelMapper.map(createIndividualDto,Individual.class);
+        individual.setCreatedAt(LocalDateTime.now());
+        return modelMapper.map(individualRepository.save(individual), CreateIndividualDto.class);
     }
 
-    public DataResult<List<IndividualDto>> getIndividual() {
+    public List<IndividualDto> getIndividuals() {
         List<Individual> individuals = individualRepository.findAll();
-        List<IndividualDto> individualDtoList = new ArrayList<>();
-
-        for (Individual individual: individuals){
-            individualDtoList.add(individualDtoConverter.convert(individual));
-        }
-
-        return new SuccessDataResult<List<IndividualDto>>(individualDtoList,"All Individual Listed!");
+        List<IndividualDto> individualDtos = individuals.stream()
+                .map(individual -> modelMapper.map(individual,IndividualDto.class))
+                .collect(Collectors.toList());
+        return individualDtos;
     }
 
-    public DataResult<IndividualDto> getIndividualId(Long id) {
-        Individual individual = individualRepository.findById(id);
-        IndividualDto individualDto = individualDtoConverter.convert(individual);
-        return new SuccessDataResult<IndividualDto>(individualDto,"Successfully Listed!");
+    public IndividualDto getIndividual(Long id) {
+        Optional<Individual> individual = individualRepository.findById(id);
+        if(individual.isPresent()){
+            return modelMapper.map(individual.get(),IndividualDto.class);
+        }
+        return null;
+    }
+
+    public IndividualDto updateIndividual(Long id, IndividualDto individualDto) {
+        Optional<Individual> individual = individualRepository.findById(id);
+        if(individual.isPresent()){
+            individual.get().setName(individualDto.getName());
+            individual.get().setSurname(individualDto.getSurname());
+            individual.get().setDateOfBirth(individualDto.getDateOfBirth());
+            individual.get().setNationalId(individualDto.getNationalId());
+
+            return modelMapper.map(individualRepository.save(individual.get()), IndividualDto.class);
+        }
+        return null;
+    }
+
+    public Boolean deleteIndividual(Long id) {
+        Optional<Individual> individual = individualRepository.findById(id);
+        if(individual.isPresent()){
+            individualRepository.delete(individual.get());
+            return true;
+        }
+        return false;
     }
 }

@@ -14,19 +14,6 @@ public class IndividualDto {
     private Set<Contact> contacts;
     private Set<Address> addresses;
 
-    public IndividualDto(){
-
-    }
-
-    public IndividualDto(String name, String surname, LocalDate dateOfBirth, String nationalId, Set<Contact> contacts, Set<Address> addresses) {
-        this.name = name;
-        this.surname = surname;
-        this.dateOfBirth = dateOfBirth;
-        this.nationalId = nationalId;
-        this.contacts = contacts;
-        this.addresses = addresses;
-    }
-
     public String getName() {
         return name;
     }

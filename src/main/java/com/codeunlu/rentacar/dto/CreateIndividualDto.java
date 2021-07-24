@@ -6,8 +6,10 @@ import com.codeunlu.rentacar.model.Contact;
 import java.time.LocalDate;
 import java.util.Set;
 
-
 public class CreateIndividualDto {
+
+    private String email;
+    private String password;
     private String name;
     private String surname;
     private LocalDate dateOfBirth;
@@ -15,19 +17,19 @@ public class CreateIndividualDto {
     private Set<Contact> contacts;
     private Set<Address> addresses;
 
-    /* User Info */
-    private String email;
-    private String password;
+    public String getEmail() {
+        return email;
+    }
 
-
-    public CreateIndividualDto(String name, String surname, LocalDate dateOfBirth, String nationalId, Set<Contact> contacts, Set<Address> addresses, String email, String password) {
-        this.name = name;
-        this.surname = surname;
-        this.dateOfBirth = dateOfBirth;
-        this.nationalId = nationalId;
-        this.contacts = contacts;
-        this.addresses = addresses;
+    public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -77,21 +79,5 @@ public class CreateIndividualDto {
 
     public void setAddresses(Set<Address> addresses) {
         this.addresses = addresses;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
