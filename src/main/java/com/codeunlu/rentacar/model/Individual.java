@@ -1,6 +1,7 @@
 package com.codeunlu.rentacar.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -9,6 +10,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@EqualsAndHashCode(of = {"id"})
 @Table(name = "individuals")
 @PrimaryKeyJoinColumn(name = "user_id")
 public class Individual extends User{

@@ -1,12 +1,14 @@
 package com.codeunlu.rentacar.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Data
+@EqualsAndHashCode(of = {"id"})
 @Table(name = "corporates")
 @PrimaryKeyJoinColumn(name = "user_id")
 public class Corporate extends User{

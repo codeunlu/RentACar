@@ -1,6 +1,6 @@
 package com.codeunlu.rentacar.service;
 
-import com.codeunlu.rentacar.dto.CreateIndividualDto;
+import com.codeunlu.rentacar.dto.create.CreateIndividualDto;
 import com.codeunlu.rentacar.dto.IndividualDto;
 import com.codeunlu.rentacar.model.Individual;
 import com.codeunlu.rentacar.repository.IndividualRepository;

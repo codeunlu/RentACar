@@ -1,6 +1,6 @@
 package com.codeunlu.rentacar.controller;
 
-import com.codeunlu.rentacar.dto.CreateIndividualDto;
+import com.codeunlu.rentacar.dto.create.CreateIndividualDto;
 import com.codeunlu.rentacar.dto.IndividualDto;
 import com.codeunlu.rentacar.service.IndividualService;
 import org.springframework.http.ResponseEntity;

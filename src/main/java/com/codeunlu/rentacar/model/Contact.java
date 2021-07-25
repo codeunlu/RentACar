@@ -3,6 +3,7 @@ package com.codeunlu.rentacar.model;
 import com.codeunlu.rentacar.model.enums.ContactType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(of = {"id"})
 @Table(name = "contacts")
 public class Contact {
     @Id
@@ -23,6 +25,7 @@ public class Contact {
     private Individual individuals;
 
     @Column(name = "contact_type_id")
+    @Enumerated
     private ContactType contactTypeId;
 
     @Column(name = "content")

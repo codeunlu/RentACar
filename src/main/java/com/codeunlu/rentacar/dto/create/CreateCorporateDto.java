@@ -1,4 +1,4 @@
-package com.codeunlu.rentacar.dto;
+package com.codeunlu.rentacar.dto.create;
 
 import com.codeunlu.rentacar.model.Address;
 import java.util.Set;
