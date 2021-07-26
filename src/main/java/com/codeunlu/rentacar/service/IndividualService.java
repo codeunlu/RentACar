@@ -2,8 +2,8 @@ package com.codeunlu.rentacar.service;
 
 import com.codeunlu.rentacar.dto.create.CreateIndividualDto;
 import com.codeunlu.rentacar.dto.IndividualDto;
-import com.codeunlu.rentacar.model.Individual;
-import com.codeunlu.rentacar.repository.IndividualRepository;
+import com.codeunlu.rentacar.model.users.Individual;
+import com.codeunlu.rentacar.repository.users.IndividualRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

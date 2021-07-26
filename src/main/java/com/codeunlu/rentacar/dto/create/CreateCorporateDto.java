@@ -1,6 +1,6 @@
 package com.codeunlu.rentacar.dto.create;
 
-import com.codeunlu.rentacar.model.Address;
+import com.codeunlu.rentacar.model.users.Address;
 import java.util.Set;
 
 public class CreateCorporateDto {

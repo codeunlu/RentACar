@@ -1,10 +1,9 @@
-package com.codeunlu.rentacar.model;
+package com.codeunlu.rentacar.model.users;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Data

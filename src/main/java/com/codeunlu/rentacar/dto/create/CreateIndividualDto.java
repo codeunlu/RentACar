@@ -1,7 +1,7 @@
 package com.codeunlu.rentacar.dto.create;
 
-import com.codeunlu.rentacar.model.Address;
-import com.codeunlu.rentacar.model.Contact;
+import com.codeunlu.rentacar.model.users.Address;
+import com.codeunlu.rentacar.model.users.Contact;
 
 import java.time.LocalDate;
 import java.util.Set;

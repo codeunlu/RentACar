@@ -1,4 +1,4 @@
-package com.codeunlu.rentacar.model;
+package com.codeunlu.rentacar.model.users;
 
 import lombok.Data;
 

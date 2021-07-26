@@ -1,11 +1,10 @@
-package com.codeunlu.rentacar.model;
+package com.codeunlu.rentacar.model.users;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Set;
 
 @Entity

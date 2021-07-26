@@ -1,7 +1,7 @@
 package com.codeunlu.rentacar.dto;
 
-import com.codeunlu.rentacar.model.Address;
-import com.codeunlu.rentacar.model.Contact;
+import com.codeunlu.rentacar.dto.usercontact.AddressDto;
+import com.codeunlu.rentacar.dto.usercontact.ContactDto;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -11,8 +11,8 @@ public class IndividualDto {
     private String surname;
     private LocalDate dateOfBirth;
     private String nationalId;
-    private Set<Contact> contacts;
-    private Set<Address> addresses;
+    private Set<ContactDto> contacts;
+    private Set<AddressDto> addresses;
 
     public String getName() {
         return name;
@@ -46,19 +46,19 @@ public class IndividualDto {
         this.nationalId = nationalId;
     }
 
-    public Set<Contact> getContacts() {
+    public Set<ContactDto> getContacts() {
         return contacts;
     }
 
-    public void setContacts(Set<Contact> contacts) {
+    public void setContacts(Set<ContactDto> contacts) {
         this.contacts = contacts;
     }
 
-    public Set<Address> getAddresses() {
+    public Set<AddressDto> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(Set<Address> addresses) {
+    public void setAddresses(Set<AddressDto> addresses) {
         this.addresses = addresses;
     }
 }

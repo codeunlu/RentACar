@@ -1,9 +1,7 @@
 package com.codeunlu.rentacar.dto;
 
-import com.codeunlu.rentacar.model.Address;
-import com.codeunlu.rentacar.model.Contact;
+import com.codeunlu.rentacar.dto.usercontact.AddressDto;
 
-import java.time.LocalDate;
 import java.util.Set;
 
 public class CorporateDto {
@@ -11,7 +9,7 @@ public class CorporateDto {
     private String companyName;
     private String companyURI;
     private String companyContact;
-    private Set<Address> addresses;
+    private Set<AddressDto> addresses;
 
     public String getCompanyName() {
         return companyName;
@@ -37,11 +35,11 @@ public class CorporateDto {
         this.companyContact = companyContact;
     }
 
-    public Set<Address> getAddresses() {
+    public Set<AddressDto> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(Set<Address> addresses) {
+    public void setAddresses(Set<AddressDto> addresses) {
         this.addresses = addresses;
     }
 }
