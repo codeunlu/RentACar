@@ -1,4 +1,4 @@
-package com.codeunlu.rentacar.dto.create;
+package com.codeunlu.rentacar.dto.cars.create;
 
 import com.codeunlu.rentacar.model.cars.CarModel;
 import java.util.Set;

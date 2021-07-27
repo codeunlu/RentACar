@@ -1,7 +1,7 @@
-package com.codeunlu.rentacar.service;
+package com.codeunlu.rentacar.service.users;
 
-import com.codeunlu.rentacar.dto.create.CreateIndividualDto;
-import com.codeunlu.rentacar.dto.IndividualDto;
+import com.codeunlu.rentacar.dto.users.create.CreateIndividualDto;
+import com.codeunlu.rentacar.dto.users.IndividualDto;
 import com.codeunlu.rentacar.model.users.Individual;
 import com.codeunlu.rentacar.repository.users.IndividualRepository;
 import org.modelmapper.ModelMapper;

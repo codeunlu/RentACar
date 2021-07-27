@@ -1,8 +1,8 @@
-package com.codeunlu.rentacar.controller;
+package com.codeunlu.rentacar.controller.users;
 
-import com.codeunlu.rentacar.dto.CorporateDto;
-import com.codeunlu.rentacar.dto.create.CreateCorporateDto;
-import com.codeunlu.rentacar.service.CorporateService;
+import com.codeunlu.rentacar.dto.users.CorporateDto;
+import com.codeunlu.rentacar.dto.users.create.CreateCorporateDto;
+import com.codeunlu.rentacar.service.users.CorporateService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

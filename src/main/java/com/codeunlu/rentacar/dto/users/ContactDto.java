@@ -1,4 +1,4 @@
-package com.codeunlu.rentacar.dto.usercontact;
+package com.codeunlu.rentacar.dto.users;
 
 import com.codeunlu.rentacar.model.users.Individual;
 import com.codeunlu.rentacar.model.enums.ContactType;

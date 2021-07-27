@@ -1,4 +1,4 @@
-package com.codeunlu.rentacar.dto.create;
+package com.codeunlu.rentacar.dto.users.create;
 
 import com.codeunlu.rentacar.model.users.Address;
 import com.codeunlu.rentacar.model.users.Contact;

@@ -1,7 +1,4 @@
-package com.codeunlu.rentacar.dto;
-
-import com.codeunlu.rentacar.dto.usercontact.AddressDto;
-import com.codeunlu.rentacar.dto.usercontact.ContactDto;
+package com.codeunlu.rentacar.dto.users;
 
 import java.time.LocalDate;
 import java.util.Set;

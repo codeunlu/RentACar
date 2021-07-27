@@ -1,7 +1,7 @@
-package com.codeunlu.rentacar.service;
+package com.codeunlu.rentacar.service.users;
 
-import com.codeunlu.rentacar.dto.CorporateDto;
-import com.codeunlu.rentacar.dto.create.CreateCorporateDto;
+import com.codeunlu.rentacar.dto.users.CorporateDto;
+import com.codeunlu.rentacar.dto.users.create.CreateCorporateDto;
 import com.codeunlu.rentacar.model.users.Corporate;
 import com.codeunlu.rentacar.repository.users.CorporateRepository;
 import org.modelmapper.ModelMapper;

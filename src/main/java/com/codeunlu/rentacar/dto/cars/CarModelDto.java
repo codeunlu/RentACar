@@ -1,9 +1,9 @@
-package com.codeunlu.rentacar.dto.create;
+package com.codeunlu.rentacar.dto.cars;
 
-
-public class CreateModelDto {
+public class CarModelDto {
     private Long id;
     private String name;
+
     public Long getId() {
         return id;
     }
@@ -11,7 +11,6 @@ public class CreateModelDto {
     public void setId(Long id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
@@ -19,4 +18,6 @@ public class CreateModelDto {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }

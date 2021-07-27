@@ -1,31 +1,13 @@
-package com.codeunlu.rentacar.dto.create;
+package com.codeunlu.rentacar.dto.users;
 
-import com.codeunlu.rentacar.model.users.Address;
 import java.util.Set;
 
-public class CreateCorporateDto {
-    private String email;
-    private String password;
+public class CorporateDto {
+
     private String companyName;
     private String companyURI;
     private String companyContact;
-    private Set<Address> addresses;
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    private Set<AddressDto> addresses;
 
     public String getCompanyName() {
         return companyName;
@@ -51,11 +33,11 @@ public class CreateCorporateDto {
         this.companyContact = companyContact;
     }
 
-    public Set<Address> getAddresses() {
+    public Set<AddressDto> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(Set<Address> addresses) {
+    public void setAddresses(Set<AddressDto> addresses) {
         this.addresses = addresses;
     }
 }
