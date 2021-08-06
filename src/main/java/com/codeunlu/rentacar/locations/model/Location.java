@@ -29,10 +29,6 @@ public class Location {
     @JoinColumn(name = "location_city_id", referencedColumnName = "id")
     private LocationCity locationCity;
 
-    @OneToOne(mappedBy = "location")
-    private CarRent carRent;
-
-
     @Column(name = "created_at")
     private LocalDate createdAt = LocalDate.now();
 }
