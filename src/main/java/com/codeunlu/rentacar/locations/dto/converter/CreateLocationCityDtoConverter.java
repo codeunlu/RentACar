@@ -10,6 +10,7 @@ public class CreateLocationCityDtoConverter {
 
     public CreateLocationCityRequest convert(LocationCity from) {
         return new CreateLocationCityRequest(
+                from.getId(),
                 from.getTitle()
         );
     }

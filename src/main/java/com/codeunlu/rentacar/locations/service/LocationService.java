@@ -31,7 +31,7 @@ public class LocationService {
         Location location = new Location();
         location.setTitle(request.getTitle());
         location.setLocationCity(cityService.findById(request.getLocationCity().getId()));
-        converter.converter(location);
+        converter.converter(locationRepository.save(location));
         return true;
     }
 
@@ -68,7 +68,7 @@ public class LocationService {
         return locationRepository.findByTitle(title);
     }
 
-    protected Location findById(Long id){
+    public Location findById(Long id){
         return locationRepository.findById(id)
                 .orElseThrow(() -> new LocationNotFoundException("Location is not founded!"));
     }

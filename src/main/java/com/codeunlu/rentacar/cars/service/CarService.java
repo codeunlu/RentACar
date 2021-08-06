@@ -86,7 +86,7 @@ public class CarService {
         return carRepository.findByTitle(title);
     }
 
-    protected Car findById(Long id){
+    public Car findById(Long id){
         return carRepository.findById(id).orElseThrow(() -> new CarNotFoundException("Car is not founded!"));
     }
 }

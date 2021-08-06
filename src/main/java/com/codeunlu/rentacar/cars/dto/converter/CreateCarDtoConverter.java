@@ -1,5 +1,6 @@
 package com.codeunlu.rentacar.cars.dto.converter;
 
+import com.codeunlu.rentacar.cars.dto.CarRentCarDto;
 import com.codeunlu.rentacar.cars.dto.request.CreateCarRequest;
 import com.codeunlu.rentacar.cars.model.Car;
 import org.springframework.stereotype.Component;
@@ -24,6 +25,12 @@ public class CreateCarDtoConverter {
                 from.getGear(),
                 from.getCarCaseType(),
                 from.getCarDoor()
+        );
+    }
+
+    public CarRentCarDto convertToCarRent(Car from){
+        return new CarRentCarDto(
+                from.getId()
         );
     }
 }

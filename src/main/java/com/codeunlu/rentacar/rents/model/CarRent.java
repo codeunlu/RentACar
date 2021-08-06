@@ -1,5 +1,6 @@
 package com.codeunlu.rentacar.rents.model;
 
+import com.codeunlu.rentacar.cars.model.Car;
 import com.codeunlu.rentacar.locations.model.Location;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +9,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -26,11 +26,15 @@ public class CarRent {
     @JoinColumn(name = "location_id", referencedColumnName = "id")
     private Location location;
 
+    @OneToOne
+    @JoinColumn(name = "car_id", referencedColumnName = "id")
+    private Car car;
+
     @Column(name = "start_date")
-    private LocalDateTime startDate;
+    private LocalDate startDate;
 
     @Column(name = "end_date")
-    private LocalDateTime endDate;
+    private LocalDate endDate;
 
     @Column(name = "created_at")
     private LocalDate createdAt = LocalDate.now();
