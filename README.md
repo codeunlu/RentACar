@@ -3,9 +3,9 @@ Spring Boot ve Katmanlı Mimari ile Kütüphane Takip Sistemi oluşturuldu.
 
 ### Teknolojiler
 - Java
-- Spring Framework
+- Spring Boot
 - PostgreSql
-- Spring JPA with Hibernate
+- Spring JPA
 - Docker
 - Swagger
 ---------------------------------------------------
