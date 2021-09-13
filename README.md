@@ -1,5 +1,5 @@
 # Rent A Car
-Spring Boot ve Katmanlı Mimari ile Kütüphane Takip Sistemi oluşturuldu.
+Spring Boot ve Katmanlı Mimari ile Araç Takip Sistemi oluşturuldu.
 
 ### Teknolojiler
 - Java
